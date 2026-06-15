@@ -1,4 +1,4 @@
-export default {
+export default { 
   async fetch(request, env, ctx) {
     const bust = Date.now();
     const url = `https://raw.githubusercontent.com/AntonucciCooks/website/main/index.html?bust=${bust}`;
