@@ -83,7 +83,7 @@
     footer nav ul { background: none; padding: 0; }
   </style>
 </head>
-<body>
+  <body>
 
   <nav aria-label="Main navigation">
     <ul>
@@ -167,7 +167,8 @@
     <p>Please complete the form below, and I'll be in touch soon.</p>
 
     <h2>Contact Form</h2>
-    <form action="https://formspree.io/f/xaqzkkqr" method="POST">
+    <div id="form-container">
+    <form id="contact-form" action="https://formspree.io/f/xaqzkkqr" method="POST">
 
       <div class="form-group">
         <label for="name">Name</label>
@@ -212,15 +213,86 @@
       </div>
 
       <input type="hidden" name="_subject" value="New inquiry from Antonucci Cooks website">
-      <input type="hidden" name="_next" value="https://antonucci-cooks.com/thank-you.html">
 
       <button type="submit">Send Message</button>
     </form>
+    </div>
+
+    <div id="thank-you-message" style="display:none; text-align:center; padding: 3rem 0;">
+      <h2 style="margin-top:0;">Thank You!</h2>
+      <p>Your message has been received. I'll be in touch soon to talk through your needs and find a time for your complimentary consultation.</p>
+    </div>
+
+    <script>
+      const form = document.getElementById('contact-form');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        }).then(response => {
+          if (response.ok) {
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+          } else {
+            alert('Something went wrong. Please try again or email me directly.');
+          }
+        }).catch(() => {
+          alert('Something went wrong. Please try again or email me directly.');
+        });
+      });
+    </script>
 
     <p class="instagram-note">Follow along on Instagram for seasonal menus, cooking inspiration, and a behind-the-scenes look at life in the kitchen: <a href="https://www.instagram.com/Antonucci_Cooks" target="_blank" rel="noopener">@Antonucci_Cooks</a></p>
   </main>
-
-  <footer>
+Let me know when that's in, and I'll send the final part!
+Sonnet 4.6 LowClaude is AI and can make mistakes. Please double-check responses.ShareContent<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antonucci Cooks | Personal Chef and Nutrition Coach! | Baltimore</title>
+<link rel="icon" type="image/svg+xml" href="antonucci-cooks-logo.svg">
+  pasted<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antonucci Cooks | Personal Chef and Nutrition Coach! | Baltimore</title>
+<link rel="icon" type="image/svg+xml" href="antonucci-cooks-logo.svg">
+  pasted<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antonucci Cooks | Personal Chef and Nutrition Coach! | Baltimore</title>
+<link rel="icon" type="image/svg+xml" href="antonucci-cooks-logo.svg">
+  pasted<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antonucci Cooks | Personal Chef and Nutrition Coach | Baltimore</title>
+  <link rel="icon" type="image/svg+xml" href="antonucci-cooks-logo.svg">
+ pastedHow it Works
+Whether you're looking for help getting healthy meals on the table during a busy week or planning a special gathering with family and friends, my goal is the same: to take the stress out of cooking so you can spend more time enjoying good food and the people around your table.
+Weekly pastedalt-svc: h3=":443"; ma=86400
+cache-control: no-store
+cf-ray: a0cc07a0c1ca9682-iad
+connection: keep-alive
+content-type: text/html
+date: tue, 16 jun 2026 18:55:37 gmt
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.copasted<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works | Antonucci Cooks | Personal Chef &amp; Nutrition Coach | Baltimore</title>
+  <link rel="icon" type="image/svg+xml" href="antonucci-copasted
+    <footer>
     <nav aria-label="Footer navigation">
       <ul style="list-style:none; display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
         <li>
