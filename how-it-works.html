@@ -35,3 +35,323 @@
             "description": "Weekly in-home meal planning, grocery shopping, cooking, and kitchen cleanup."
           },
           "price": "350",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Intimate Dinner Parties",
+            "description": "Personal chef service for dinner parties of up to 8 guests, including menu planning, shopping, cooking, and cleanup."
+          },
+          "price": "125",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cocktail Parties, Showers & Celebrations",
+            "description": "Cocktail-style events featuring hors d'oeuvres and small bites for larger gatherings."
+          },
+          "price": "75",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f5efe4;
+      --cream-dark: #ede4d3;
+      --green-dark: #4a5c35;
+      --text: #1e2e22;
+      --text-muted: #5a6e5f;
+      --border: #d6cfc4;
+      --nav-text: #1e2e22;
+    }
+    body { font-family: 'Lato', sans-serif; font-weight: 400; background-color: var(--cream); color: var(--text); line-height: 1.8; }
+    nav { background: linear-gradient(135deg, #cfe1b9 0%, #b6c99b 50%, #98a87c 100%); padding: 1rem 2rem; }
+    nav ul { list-style: none; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+    nav ul li a { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; text-decoration: none; color: var(--nav-text); font-family: 'Lato', sans-serif; font-size: 0.8rem; letter-spacing: 0.06em; opacity: 0.9; transition: opacity 0.2s; }
+    nav ul li a:hover { opacity: 1; }
+    nav ul li a .nav-icon { width: 52px; height: 52px; }
+    header { background: linear-gradient(135deg, #cfe1b9 0%, #b6c99b 50%, #98a87c 100%); padding: 2.5rem 2rem 2rem; text-align: center; border-bottom: 2px solid rgba(255,255,255,0.2); }
+    header .site-name { font-family: 'Lato', sans-serif; font-size: 2rem; font-weight: 300; letter-spacing: 0.12em; color: var(--nav-text); }
+    header .tagline { font-family: 'Lato', sans-serif; font-size: 0.9rem; font-style: italic; font-weight: 300; color: var(--nav-text); opacity: 0.8; margin-top: 0.4rem; letter-spacing: 0.05em; }
+    main { max-width: 680px; margin: 0 auto; padding: 3.5rem 2rem 4rem; }
+    h1 { font-family: 'Lato', sans-serif; font-size: 1.8rem; font-weight: 300; margin-bottom: 1.75rem; line-height: 1.3; color: var(--green-dark); }
+    h2 { font-family: 'Lato', sans-serif; font-size: 1.4rem; font-weight: 300; margin-bottom: 1.25rem; margin-top: 3rem; line-height: 1.3; color: var(--green-dark); }
+    h3 { font-family: 'Lato', sans-serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 1rem; margin-top: 2rem; color: var(--green-dark); }
+    p { font-size: 1.05rem; margin-bottom: 1.5rem; color: var(--text); }
+    ul.feature-list { margin: 0 0 1.5rem 0; padding-left: 1.4rem; }
+    ul.feature-list li { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .step { margin-bottom: 2rem; }
+    .step-label { font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem; }
+    .pricing-box { margin: 1.5rem 0 2.5rem; padding: 1.5rem 2rem; border: 1px solid var(--border); background-color: var(--cream-dark); }
+    .pricing-box p { margin-bottom: 0.75rem; }
+    .pricing-box p:last-child { margin-bottom: 0; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    .contact { margin-top: 2.5rem; padding: 2rem; border: 1px solid var(--border); background-color: var(--cream-dark); }
+    .contact h2 { font-size: 1.1rem; font-weight: 400; margin-bottom: 1rem; margin-top: 0; letter-spacing: 0.03em; color: var(--green-dark); }
+    .contact a { color: var(--green-dark); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .contact a:hover { border-bottom-color: var(--green-dark); }
+    .contact p { margin-bottom: 0.5rem; font-size: 0.98rem; }
+    footer { background: linear-gradient(135deg, #cfe1b9 0%, #b6c99b 50%, #98a87c 100%); padding: 1.5rem 2rem 2rem; text-align: center; font-size: 0.85rem; color: var(--nav-text); font-family: 'Lato', sans-serif; }
+    footer a { color: var(--nav-text); text-decoration: none; opacity: 0.85; }
+    footer a:hover { opacity: 1; }
+    footer .footer-copy { margin-bottom: 1.25rem; opacity: 0.8; }
+    footer nav ul { background: none; padding: 0; }
+  </style>
+</head>
+<body>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      <li>
+        <a href="index.html">
+          <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+            <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+            <text x="100" y="118" font-family="Georgia, serif" font-size="72" font-weight="400" fill="#1e2e22" text-anchor="middle">A</text>
+          </svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="how-it-works.html">
+          <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+            <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+            <text x="100" y="108" font-family="Georgia, serif" font-size="36" font-weight="400" fill="#1e2e22" text-anchor="middle">HOW</text>
+          </svg>
+          How It Works
+        </a>
+      </li>
+      <li>
+        <a href="menus.html">
+          <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+            <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+            <line x1="100" y1="112" x2="100" y2="140" stroke="#1e2e22" stroke-width="5" stroke-linecap="round"/>
+            <ellipse cx="100" cy="88" rx="14" ry="22" fill="none" stroke="#1e2e22" stroke-width="4"/>
+          </svg>
+          Menus
+        </a>
+      </li>
+      <li>
+        <a href="gallery.html">
+          <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+            <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+            <rect x="76" y="90" width="48" height="30" rx="3" fill="none" stroke="#1e2e22" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M94 90 L96 84 L104 84 L106 90" fill="none" stroke="#1e2e22" stroke-width="3.5" stroke-linejoin="round"/>
+            <circle cx="100" cy="105" r="8" fill="none" stroke="#1e2e22" stroke-width="3.5"/>
+          </svg>
+          Gallery
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+            <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+            <rect x="72" y="88" width="56" height="34" rx="2" fill="none" stroke="#1e2e22" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M72 88 L100 108 L128 88" fill="none" stroke="#1e2e22" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Contact
+        </a>
+      </li>
+      <li>
+        <a href="faq.html">
+          <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+            <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+            <text x="100" y="115" font-family="Georgia, serif" font-size="80" font-weight="400" fill="#1e2e22" text-anchor="middle">?</text>
+          </svg>
+          FAQ
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="site-name">Antonucci Cooks</div>
+    <div class="tagline">Personal Chef &amp; Nutrition Coach &mdash; Baltimore</div>
+  </header>
+
+  <main>
+    <h1>How It Works</h1>
+    <p>Whether you're looking for help getting healthy meals on the table during a busy week or planning a special gathering with family and friends, my goal is the same: to take the stress out of cooking so you can spend more time enjoying good food and the people around your table.</p>
+
+    <h2>Weekly Personal Chef Services</h2>
+    <p>Hiring a personal chef should make your life easier, not more complicated. I'll take care of the meal planning, grocery shopping, cooking, and cleanup so you can enjoy delicious, home-cooked meals throughout the week.</p>
+
+    <div class="step">
+      <div class="step-label">Step 1</div>
+      <h3 style="margin-top:0;">Let's Get to Know Each Other</h3>
+      <p>Every new client begins with a complimentary 30-minute consultation. We'll talk about your favorite foods, dietary needs, health goals, allergies, household size, and the types of meals that work best for your lifestyle.</p>
+      <p>Whether you're looking for family-friendly dinners, higher-protein meals, GLP-1 support, gluten-free options, or simply help getting dinner on the table, I'll create a plan tailored specifically to you.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Step 2</div>
+      <h3 style="margin-top:0;">Menu Planning &amp; Approval</h3>
+      <p>Each week, I'll send a customized menu for your review and approval at least 48 hours before your scheduled cook day.</p>
+      <p>Need a few adjustments? No problem. My goal is to create meals you're genuinely excited to eat.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Step 3</div>
+      <h3 style="margin-top:0;">Grocery Shopping</h3>
+      <p>On the morning of your cook day, I'll shop for fresh, high-quality ingredients based on your approved menu. Grocery costs are billed separately at cost, with no markup.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Step 4</div>
+      <h3 style="margin-top:0;">In-Home Meal Preparation</h3>
+      <p>Using your kitchen, I'll prepare your meals for the week, package and label them, and provide reheating instructions when needed.</p>
+      <p>You do not need to be home during your service, although many clients choose to be. Either way, you'll return to a refrigerator stocked with meals that are ready when you are.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Step 5</div>
+      <h3 style="margin-top:0;">Kitchen Cleanup</h3>
+      <p>Before I leave, your kitchen will be cleaned and returned to the condition I found it in. The only evidence I've been there should be the delicious meals waiting in your refrigerator.</p>
+    </div>
+
+    <h2>Dietary Needs &amp; Preferences</h2>
+    <p>Every menu is customized to your tastes, preferences, and goals. I regularly accommodate:</p>
+    <ul class="feature-list">
+      <li>GLP-1 friendly meal planning</li>
+      <li>Bariatric nutrition needs</li>
+      <li>Higher-protein meal plans</li>
+      <li>Gluten-free diets</li>
+      <li>Food allergies and sensitivities</li>
+      <li>Low-FODMAP diets</li>
+      <li>Vegetarian and plant-forward meals</li>
+    </ul>
+    <p>My philosophy is simple: food should support your goals without sacrificing flavor, enjoyment, or variety.</p>
+
+    <h2>Pricing</h2>
+    <div class="pricing-box">
+      <p>Weekly Personal Chef Service starts at $350 per visit, plus the cost of groceries.</p>
+      <p>Pricing varies based on household size, number of meals requested, dietary needs, and service frequency.</p>
+      <p>Most clients choose a recurring weekly or bi-weekly schedule, but occasional services are also available.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2>Dinner Parties &amp; Special Events</h2>
+    <p>Hosting a gathering should be fun. Whether you're celebrating a milestone birthday, hosting a dinner party, planning a baby shower, or gathering friends for brunch, I'll help create a memorable experience while you focus on your guests.</p>
+
+    <h3>Intimate Dinner Parties</h3>
+    <p>Perfect for gatherings of up to 8 guests.</p>
+    <p>We'll work together to create a customized menu based on your preferences, dietary needs, and the style of event you're hosting. I'll handle the menu planning, shopping, cooking, and kitchen cleanup so you can enjoy the evening alongside your guests.</p>
+    <div class="pricing-box">
+      <p>Dinner parties start at $125 per person, plus the cost of groceries, with a minimum of 4 guests.</p>
+    </div>
+
+    <h3>Cocktail Parties, Showers &amp; Celebrations</h3>
+    <p>For larger gatherings, I offer cocktail-style events featuring substantial hors d'oeuvres and small bites designed for mingling and sharing.</p>
+    <p>Perfect for:</p>
+    <ul class="feature-list">
+      <li>Birthday celebrations</li>
+      <li>Baby showers</li>
+      <li>Bridal showers</li>
+      <li>Engagement parties</li>
+      <li>Holiday gatherings</li>
+      <li>Cocktail receptions</li>
+    </ul>
+    <div class="pricing-box">
+      <p>Cocktail-style events start at $75 per person, plus the cost of groceries, with a minimum event fee of $750.</p>
+    </div>
+
+    <h3>Customized Menus</h3>
+    <p>Every event menu is tailored to your guests, preferences, and dietary needs. Whether you're envisioning Mediterranean-inspired small plates, seasonal hors d'oeuvres, an elegant brunch spread, or a multi-course dinner, we'll create a menu that fits your occasion.</p>
+
+    <p>Ready to spend less time worrying about the food and more time enjoying it? I'd love to hear from you.</p>
+
+    <div class="contact">
+      <h2>Get in touch</h2>
+      <p>Email: <a href="mailto:antonucci.cooks@gmail.com">antonucci.cooks@gmail.com</a></p>
+      <p>Phone: <a href="tel:+12024878402">(202) 487-8402</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/Antonucci_Cooks" target="_blank" rel="noopener">@Antonucci_Cooks</a></p>
+    </div>
+  </main>
+<footer>
+    <nav aria-label="Footer navigation">
+      <ul style="list-style:none; display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+        <li>
+          <a href="index.html">
+            <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+              <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+              <text x="100" y="118" font-family="Georgia, serif" font-size="72" font-weight="400" fill="#1e2e22" text-anchor="middle">A</text>
+            </svg>
+            <span style="display:block; text-align:center; font-size:0.75rem; margin-top:0.3rem;">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="how-it-works.html">
+            <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+              <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+              <text x="100" y="108" font-family="Georgia, serif" font-size="36" font-weight="400" fill="#1e2e22" text-anchor="middle">HOW</text>
+            </svg>
+            <span style="display:block; text-align:center; font-size:0.75rem; margin-top:0.3rem;">How It Works</span>
+          </a>
+        </li>
+        <li>
+          <a href="menus.html">
+            <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+              <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+              <line x1="100" y1="112" x2="100" y2="140" stroke="#1e2e22" stroke-width="5" stroke-linecap="round"/>
+              <ellipse cx="100" cy="88" rx="14" ry="22" fill="none" stroke="#1e2e22" stroke-width="4"/>
+            </svg>
+            <span style="display:block; text-align:center; font-size:0.75rem; margin-top:0.3rem;">Menus</span>
+          </a>
+        </li>
+        <li>
+          <a href="gallery.html">
+            <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+              <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+              <rect x="76" y="90" width="48" height="30" rx="3" fill="none" stroke="#1e2e22" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M94 90 L96 84 L104 84 L106 90" fill="none" stroke="#1e2e22" stroke-width="3.5" stroke-linejoin="round"/>
+              <circle cx="100" cy="105" r="8" fill="none" stroke="#1e2e22" stroke-width="3.5"/>
+            </svg>
+            <span style="display:block; text-align:center; font-size:0.75rem; margin-top:0.3rem;">Gallery</span>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+              <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+              <rect x="72" y="88" width="56" height="34" rx="2" fill="none" stroke="#1e2e22" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M72 88 L100 108 L128 88" fill="none" stroke="#1e2e22" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span style="display:block; text-align:center; font-size:0.75rem; margin-top:0.3rem;">Contact</span>
+          </a>
+        </li>
+        <li>
+          <a href="faq.html">
+            <svg class="nav-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="92" fill="none" stroke="#1e2e22" stroke-width="3"/>
+              <circle cx="100" cy="100" r="74" fill="none" stroke="#1e2e22" stroke-width="1.5"/>
+              <text x="100" y="115" font-family="Georgia, serif" font-size="80" font-weight="400" fill="#1e2e22" text-anchor="middle">?</text>
+            </svg>
+            <span style="display:block; text-align:center; font-size:0.75rem; margin-top:0.3rem;">FAQ</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <p class="footer-copy" style="margin-top:1.5rem;">&copy; 2026 Antonucci Cooks &nbsp;|&nbsp; Baltimore, MD &nbsp;|&nbsp; <a href="mailto:antonucci.cooks@gmail.com">antonucci.cooks@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>
