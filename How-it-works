@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works | Antonucci Cooks | Personal Chef &amp; Nutrition Coach | Baltimore</title>
+  <link rel="icon" type="image/svg+xml" href="antonucci-cooks-logo.svg">
+  <meta name="description" content="Learn how Antonucci Cooks' personal chef services work, from consultation to weekly meal prep, plus dinner party and event catering options in Baltimore.">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Personal Chef Services",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Antonucci Cooks",
+      "telephone": "(202) 487-8402",
+      "email": "antonucci.cooks@gmail.com",
+      "url": "https://antonucci-cooks.com"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Greater Baltimore"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Personal Chef and Event Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Weekly Personal Chef Service",
+            "description": "Weekly in-home meal planning, grocery shopping, cooking, and kitchen cleanup."
+          },
+          "price": "350",
