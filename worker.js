@@ -1,10 +1,14 @@
 export default {
   async fetch(request, env, ctx) {
-    const url = new URL(request.url);
-    let path = url.pathname;
-    if (path === '/' || path === '') {
-      path = '/index.html';
-    }
+  const url = new URL(request.url);
+let path = url.pathname;
+if (path === "/" || path === "") {
+  path = "/index.html";
+} else if (path.endsWith("/")) {
+  path = path + "index.html";
+} else if (!path.includes(".")) {
+  path = path + "/index.html";
+}
     const bust = Date.now();
     const githubUrl = `https://raw.githubusercontent.com/AntonucciCooks/website/main${path}?bust=${bust}`;
     const response = await fetch(githubUrl, { cache: 'no-store' });
