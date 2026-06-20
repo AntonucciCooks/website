@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Antonucci Cooks | Personal Chef &amp; Nutrition Coach | Baltimore</title>
-  <link rel="icon" type="image/svg+xml" href="antonucci-cooks-logo.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
   <meta name="description" content="Mary Antonucci is a personal chef and board-certified nutrition coach serving Baltimore and surrounding communities. In-home meal prep, dinner parties, and more.">
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
+    "@id": "https://antonucci-cooks.com/#business",
     "name": "Antonucci Cooks",
     "description": "Personal chef and board-certified nutrition coach offering in-home meal prep, dinner parties, and intimate celebrations in Baltimore and surrounding communities.",
     "url": "https://antonucci-cooks.com",
@@ -18,8 +20,7 @@
     "email": "antonucci.cooks@gmail.com",
     "image": "https://antonucci-cooks.com/antonucci-cooks-logo.svg",
     "founder": {
-      "@type": "Person",
-      "name": "Mary Antonucci"
+      "@id": "https://antonucci-cooks.com/#mary"
     },
     "areaServed": {
       "@type": "GeoCircle",
@@ -61,6 +62,52 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://antonucci-cooks.com/#mary",
+    "name": "Mary Antonucci",
+    "jobTitle": "Personal Chef and Board-Certified Nutrition Coach",
+    "image": "https://antonucci-cooks.com/headshot.png",
+    "worksFor": {
+      "@id": "https://antonucci-cooks.com/#business"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "L'Academie de Cuisine"
+    },
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Board Certified Nutrition Coach"
+      }
+    ],
+    "knowsAbout": [
+      "Personal Chef Services",
+      "Nutrition Coaching",
+      "GLP-1 Nutrition",
+      "Bariatric Nutrition",
+      "Mediterranean Cuisine",
+      "Meal Planning",
+      "Healthy Cooking"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/Antonucci_Cooks"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://antonucci-cooks.com",
+    "name": "Antonucci Cooks"
+  }
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -78,7 +125,7 @@
     nav ul li a { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; text-decoration: none; color: var(--nav-text); font-family: 'Lato', sans-serif; font-size: 0.8rem; letter-spacing: 0.06em; opacity: 0.9; transition: opacity 0.2s; }
     nav ul li a:hover { opacity: 1; }
     nav ul li a .nav-icon { width: 52px; height: 52px; }
-    header { background: linear-gradient(135deg, #cfe1b9 0%, #b6c99b 50%, #98a87c 100%); padding: 2.5rem 2rem 2rem; text-align: center; border-bottom: 2px solid rgba(255,255,255,0.2); }
+    header { background: linear-gradient(135deg, #cfe1b9 0%, #b6c99b 50%, #98a87c 100%); padding: 1rem 2rem; text-align: center; border-bottom: 2px solid rgba(255,255,255,0.2); }
     header .site-name { font-family: 'Lato', sans-serif; font-size: 2rem; font-weight: 300; letter-spacing: 0.12em; color: var(--nav-text); }
     header .tagline { font-family: 'Lato', sans-serif; font-size: 0.9rem; font-style: italic; font-weight: 300; color: var(--nav-text); opacity: 0.8; margin-top: 0.4rem; letter-spacing: 0.05em; }
     .hero-img { width: 100%; max-height: 420px; object-fit: cover; object-position: center; display: block; }
@@ -192,7 +239,7 @@
     <hr class="divider">
 
     <h2>About Mary</h2>
-    <img src="Headshot_for_website.png" alt="Mary Antonucci, personal chef and nutrition coach" class="about-photo">
+    <img src="headshot.png" alt="Mary Antonucci, personal chef and nutrition coach" class="about-photo">
     <p>My earliest food memories are in my grandparents' garden, picking and snapping beans on warm summer afternoons. Growing up in the South with Depression-era grandparents, food was never taken for granted. Meals were made from scratch, vegetables came from the garden, and every Sunday our family gathered around my Nanny's table for supper. Food was how we showed love, cared for one another, and stayed connected.</p>
     <p>I've always been happiest in the kitchen. Wanting to refine the skills I learned growing up, I attended L'Academie de Cuisine and earned a diploma in Culinary Arts. My cooking is heavily influenced by the Mediterranean flavors I love most, especially French, Spanish, Italian, and Turkish cuisines. Later, my own health journey led me to become a nutrition coach. I believe healthy food should be delicious, satisfying, and realistic for everyday life. No food guilt. No fad diets. Just balance.</p>
     <p>One of my favorite parts of this work is getting to know my clients. Every menu I create is tailored to the individual, their preferences, and their goals. I have a particular interest in supporting clients taking GLP-1 medications and those who have undergone bariatric surgery, where thoughtful, nutrient-dense meals can make a meaningful difference. At the end of the day, I want my clients to trust me, feel cared for, and look forward to the meals waiting for them in the refrigerator.</p>
@@ -207,7 +254,6 @@
       <p>Instagram: <a href="https://www.instagram.com/Antonucci_Cooks" target="_blank" rel="noopener">@Antonucci_Cooks</a></p>
     </div>
   </main>
-
   <footer>
     <nav aria-label="Footer navigation">
       <ul style="list-style:none; display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
