@@ -111,7 +111,7 @@
     }
   </style>
 </head>
-<body>
+  <body>
 
   <nav aria-label="Main navigation">
     <ul>
@@ -191,18 +191,19 @@
     <h1>Gallery</h1>
     <p class="intro">A few dishes from the kitchen.</p>
 
+    <!-- ================================================================
+         HYBRID CAROUSEL
+         - STATIC slides (ac4-ac8) are hardcoded below and crawlable.
+         - DYNAMIC slides (ac2, ac3, and anything you append) load from
+           /gallery/gallery.json at runtime.
+         - ORDER IS AUTOMATIC: every slide (static or JSON) is sorted by
+           its ac-number, HIGHEST FIRST. So ac9 outranks ac8, etc.
+           You never have to place slides in order - the number decides.
+         ================================================================ -->
     <div class="swiper gallery-swiper">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper" id="gallery-slides">
 
-        <div class="swiper-slide">
-          <img src="/ac2.webp" loading="lazy" alt="Chicken Piccata with lemon caper sauce">
-          <div class="slide-caption">Chicken Piccata with a lemon caper sauce, a timeless dish that proves that simple ingredients can still steal the show.</div>
-        </div>
-
-        <div class="swiper-slide">
-          <img src="/ac3.webp" loading="lazy" alt="Littleneck clams in white wine and garlic broth">
-          <div class="slide-caption">Littleneck clams in white wine and garlic broth. Don't forget the crusty bread to soak up every last drop!</div>
-        </div>
+        <!-- ▼▼▼  STATIC SLIDES (ac4-ac8) - crawlable HTML. Hand-edit OK.  ▼▼▼ -->
 
         <div class="swiper-slide">
           <img src="/ac4.webp" loading="lazy" alt="Grilled skirt steak with chimichurri sauce">
@@ -229,6 +230,8 @@
           <div class="slide-caption">Grilled shrimp scampi: garlicky, buttery, and the kind of comfort food that makes any night feel a little special.</div>
         </div>
 
+        <!-- ▲▲▲  END STATIC SLIDES.  JSON slides inject here at load.  ▲▲▲ -->
+
       </div>
     </div>
 
@@ -238,7 +241,7 @@
     </div>
 
   </main>
-  <footer>
+    <footer>
     <nav aria-label="Footer navigation">
       <ul style="list-style:none; display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
         <li>
@@ -312,17 +315,77 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
   <script>
-    const gallerySwiper = new Swiper('.gallery-swiper', {
-      loop: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      keyboard: { enabled: true },
-    });
+    // ============================================================
+    // HYBRID CAROUSEL LOADER
+    // 1. Static slides (ac4-ac8) are already in the HTML.
+    // 2. Fetch /gallery/gallery.json and inject its slides.
+    // 3. Sort ALL slides by ac-number, highest first (newest).
+    // 4. Start Swiper.
+    // If the JSON fails, the static slides still render and sort.
+    // ============================================================
+    (function () {
+      var wrapper = document.getElementById('gallery-slides');
 
-    document.getElementById('prev-btn').addEventListener('click', () => gallerySwiper.slidePrev());
-    document.getElementById('next-btn').addEventListener('click', () => gallerySwiper.slideNext());
+      // Pull the integer N out of ".../acN.webp". No match -> 0.
+      function acNum(src) {
+        var m = /ac(\d+)\.webp/i.exec(src || '');
+        return m ? parseInt(m[1], 10) : 0;
+      }
+
+      function buildSlide(item) {
+        var slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        var img = document.createElement('img');
+        img.src = item.image;
+        img.loading = 'lazy';
+        img.alt = item.alt || '';
+        var cap = document.createElement('div');
+        cap.className = 'slide-caption';
+        cap.textContent = item.caption || '';
+        slide.appendChild(img);
+        slide.appendChild(cap);
+        return slide;
+      }
+
+      // Sort every slide currently in the wrapper by ac-number, descending.
+      function sortSlides() {
+        var slides = Array.prototype.slice.call(wrapper.querySelectorAll('.swiper-slide'));
+        slides.sort(function (a, b) {
+          var na = acNum(a.querySelector('img') && a.querySelector('img').getAttribute('src'));
+          var nb = acNum(b.querySelector('img') && b.querySelector('img').getAttribute('src'));
+          return nb - na; // highest number first
+        });
+        slides.forEach(function (s) { wrapper.appendChild(s); }); // re-append in sorted order
+      }
+
+      function startSwiper() {
+        var gallerySwiper = new Swiper('.gallery-swiper', {
+          loop: true,
+          autoplay: { delay: 4000, disableOnInteraction: false },
+          keyboard: { enabled: true }
+        });
+        document.getElementById('prev-btn').addEventListener('click', function () { gallerySwiper.slidePrev(); });
+        document.getElementById('next-btn').addEventListener('click', function () { gallerySwiper.slideNext(); });
+      }
+
+      fetch('/gallery/gallery.json', { cache: 'no-cache' })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Could not load gallery.json');
+          return res.json();
+        })
+        .then(function (data) {
+          var slides = (data && data.slides) ? data.slides : [];
+          slides.forEach(function (item) { wrapper.appendChild(buildSlide(item)); });
+          sortSlides();
+          startSwiper();
+        })
+        .catch(function (err) {
+          // JSON failed: static slides still show. Sort them and go.
+          console.error(err);
+          sortSlides();
+          startSwiper();
+        });
+    })();
   </script>
 
 </body>
