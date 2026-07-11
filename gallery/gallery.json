@@ -1,0 +1,22 @@
+{
+  "_README_HOW_TO_ADD_A_PHOTO": [
+    "1. Upload the image to the repo ROOT, named ac<NUMBER>.webp  (e.g. ac9.webp).",
+    "2. Use the NEXT number up from the highest that exists. Higher number = shows FIRST.",
+    "3. Copy one full { ... } block from the 'slides' list below.",
+    "4. Paste it at the BOTTOM of the 'slides' list (just append - no need to reorder).",
+    "5. Change image, alt, and caption. Order sorts itself by the ac-number automatically.",
+    "6. JSON RULE: put a comma after every } EXCEPT the last one in the list."
+  ],
+  "slides": [
+    {
+      "image": "/ac2.webp",
+      "alt": "Chicken Piccata with lemon caper sauce",
+      "caption": "Chicken Piccata with a lemon caper sauce, a timeless dish that proves that simple ingredients can still steal the show."
+    },
+    {
+      "image": "/ac3.webp",
+      "alt": "Littleneck clams in white wine and garlic broth",
+      "caption": "Littleneck clams in white wine and garlic broth. Don't forget the crusty bread to soak up every last drop!"
+    }
+  ]
+}
