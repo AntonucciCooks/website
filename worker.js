@@ -18,8 +18,10 @@ if (path === "/" || path === "") {
     const contentType = path.endsWith('.html') ? 'text/html' :
                         path.endsWith('.css') ? 'text/css' :
                         path.endsWith('.js') ? 'application/javascript' :
+                        path.endsWith('.json') ? 'application/json' :
                         path.endsWith('.png') ? 'image/png' :
                         path.endsWith('.jpg') || path.endsWith('.jpeg') ? 'image/jpeg' :
+                        path.endsWith('.webp') ? 'image/webp' :
                         path.endsWith('.svg') ? 'image/svg+xml' :
                         'application/octet-stream';
     return new Response(response.body, {
